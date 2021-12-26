@@ -75,3 +75,4 @@ class HandDetector():
 
         cv2.destroyAllWindows()
         lms.to_csv(save_file_name)
+
