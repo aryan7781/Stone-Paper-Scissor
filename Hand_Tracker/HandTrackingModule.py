@@ -1,6 +1,8 @@
 import mediapipe as mp
 import cv2
 import time
+
+import numpy as np
 import pandas as pd
 
 
@@ -18,6 +20,7 @@ class HandDetector():
         self.hands = self.mpHands.Hands(
             min_tracking_confidence=self.trackCon,
             min_detection_confidence=self.detectionCon,
+            max_num_hands=self.maxHands
         )
 
         self.mpDraw = mp.solutions.drawing_utils
@@ -74,15 +77,25 @@ class HandDetector():
         cv2.destroyAllWindows()
         lms.to_csv(save_file_name)
 
-if __name__ == "main":
-    hand_tracker = HandDetector()
-    cap = cv2.VideoCapture(0)
-    while True:
-        success, img = cap.read()
-        hand_tracker.findHands(img)
+    def get_landmarks(self, img):
 
-        cv2.imshow("Hand", img)
-        cv2.waitKey(1)
+        imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        results = self.hands.process(imgRGB)
+        if results.multi_hand_landmarks:
+            for handLms in results.multi_hand_landmarks:
+                lm_dict = {}
+                for id, Lm in enumerate(handLms.landmark):
+                    lm_dict[f"{id}_x"] = Lm.x
+                    lm_dict[f"{id}_y"] = Lm.y
+                    # print(lm_dict)
 
-    cv2.destroyAllWindows()
+                self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
+                lms = pd.Series(lm_dict)
+                lms = lms.to_numpy()
+                lms = np.expand_dims(lms, axis = 0)
+            return lms
+        else:
+            return "No Hand Tracked"
+
+
 
