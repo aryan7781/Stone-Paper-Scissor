@@ -1,3 +1,31 @@
+
+body{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
 .front-bg{
+    height: 100vh;
     background: url("./images/stone_paper_scissors_logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* opacity: 0.4; */
+}
+
+.nav-opts{
+    display: flex;
+    justify-content: end;
+}
+
+.bg-light-pink{
+    background-color: #c06b6b;
+}
+
+@media screen and (max-width: 991px)
+{
+    .nav-opts{
+        justify-content: start;
+    }
 }
