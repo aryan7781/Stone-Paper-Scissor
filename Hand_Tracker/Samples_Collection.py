@@ -6,7 +6,7 @@ import pandas as pd
 from HandTrackingModule import HandDetector
 
 hand_detector = HandDetector()
-NUM_SAMPLES = 5000
+NUM_SAMPLES = 500
 
 # Collecting Landmarks For Stone
 hand_detector.collect_landmarks(
@@ -14,7 +14,7 @@ hand_detector.collect_landmarks(
     './Landmarks/Stone.csv',
     num_samples= NUM_SAMPLES
 )
-time.sleep(5)
+time.sleep(1)
 
 # Collecting Landmarks For Paper
 hand_detector.collect_landmarks(
@@ -22,7 +22,7 @@ hand_detector.collect_landmarks(
     './Landmarks/Paper.csv',
     num_samples=NUM_SAMPLES
 )
-time.sleep(5)
+time.sleep(1)
 
 
 # Collecting Landmarks For Scissors
