@@ -3,23 +3,21 @@ import cv2
 import time
 import pandas as pd
 
+
 class HandDetector():
-    def __init__(self, mode = False,
-                 maxHands = 1,
+    def __init__(self,
+                 maxHands = 2,
                  detectionCon = 0.5,
                  trackCon = 0.5):
 
-        self.mode = mode
         self.maxHands = maxHands
         self.detectionCon = detectionCon
         self.trackCon = trackCon
 
         self.mpHands = mp.solutions.hands
         self.hands = self.mpHands.Hands(
-            static_image_mode=self.mode,
             min_tracking_confidence=self.trackCon,
             min_detection_confidence=self.detectionCon,
-            max_num_hands=self.maxHands
         )
 
         self.mpDraw = mp.solutions.drawing_utils
@@ -63,11 +61,11 @@ class HandDetector():
                         lm_dict[f"{id}_x"] = Lm.x
                         lm_dict[f"{id}_y"] = Lm.y
                     lm_dict['Category'] = category_of_sample
-                # print(lm_dict)
+                    # print(lm_dict)
 
-                self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
-                lms = lms.append(lm_dict, ignore_index=True)
-                print(len(lms))
+                    self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
+                    lms = lms.append(lm_dict, ignore_index=True)
+                    print(len(lms))
 
             cv2.imshow("HandTrack", img)
             pTime = time.time() - Stime
@@ -75,3 +73,16 @@ class HandDetector():
 
         cv2.destroyAllWindows()
         lms.to_csv(save_file_name)
+
+if __name__ == "main":
+    hand_tracker = HandDetector()
+    cap = cv2.VideoCapture(0)
+    while True:
+        success, img = cap.read()
+        hand_tracker.findHands(img)
+
+        cv2.imshow("Hand", img)
+        cv2.waitKey(1)
+
+    cv2.destroyAllWindows()
+
