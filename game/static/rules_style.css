@@ -1,6 +1,70 @@
+
+body{
+    font-family: 'Nunito', sans-serif;
+}
+
 #rules{
-    background: url("./images/sps_theme.png");
+    background: url("/game/static/images/sps_theme.png");
     background-position: center;
     background-repeat: no-repeat;
-    
+    /* height: 100vh; */
+    padding: 20px;
+}
+
+.rules-heading{
+    font-family: 'Lobster Two', cursive;
+    padding: 5px 25px;
+    background-color: #fff;
+    border: 2px solid rgb(182, 169, 169);
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 3px 3px rgb(243, 130, 130);
+}
+
+.rule-num{
+    border: 5px solid rgb(230, 79, 79);
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 5px 5px rgb(243, 130, 130);
+}
+
+.nav-opts{
+    display: flex;
+    justify-content: end;
+}
+
+.bg-light-pink{
+    background-color: #ecb5b5;
+}
+
+.pad-profile{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.rules-content{
+    width: 40%;
+    background-color: rgb(233, 233, 122);
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 10px;
+    box-shadow: 5px 5px gray;
+}
+
+@media screen and (max-width: 991px)
+{
+    .nav-opts{
+        justify-content: start;
+    }
+
+    .pad-dropdown{
+        width: 92vw;
+    }
+}
+
+.sps-logo{
+    height: 50px;
 }

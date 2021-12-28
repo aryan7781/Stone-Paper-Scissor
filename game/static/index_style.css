@@ -23,33 +23,10 @@ body{
     background-color: #ecb5b5;
 }
 
-.mrgin-drop{
-    margin-right: 20px;
-}
-
-.profile-card{
-    width: 100%;
-    padding-bottom: 30px;
-    padding-top: 30px;
-}
-
-.dropdown-menu{
-    width: 200px;
-}
-
-.profile-name{
-    text-align: center;
-}
-
 .pad-profile{
-    padding-right: 40px;
+    padding-right: 10px;
     padding-left: 10px;
 }
-
-.profile-icon{
-    border-radius: 20px;
-}
-
 
 @media screen and (max-width: 991px)
 {
@@ -64,11 +41,4 @@ body{
 
 .sps-logo{
     height: 50px;
-}
-
-.btn-mod{
-    height: 60px;
-    width: 120px;
-    border-width: 10px;
-    
 }
