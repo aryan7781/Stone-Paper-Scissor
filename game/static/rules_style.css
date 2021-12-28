@@ -4,11 +4,13 @@ body{
 }
 
 #rules{
-    background: url("/game/static/images/sps_theme.png");
+    background: url("./images/sps_theme.png");
     background-position: center;
     background-repeat: no-repeat;
-    /* height: 100vh; */
-    padding: 20px;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    /* padding: 20px; */
 }
 
 .rules-heading{
