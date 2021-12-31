@@ -6,3 +6,9 @@ def index(request):
 
 def rules(request):
     return render(request,'rules.html')
+
+def play(request):
+    return render(request,'play_board.html')
+
+def profile(request):
+    return render(request,'profile.html')
