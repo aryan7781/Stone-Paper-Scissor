@@ -23,19 +23,11 @@ body{
     background-color: #ecb5b5;
 }
 
-.pad-profile{
-    padding-right: 10px;
-    padding-left: 10px;
-}
 
 @media screen and (max-width: 991px)
 {
     .nav-opts{
         justify-content: start;
-    }
-
-    .pad-dropdown{
-        width: 92vw;
     }
 }
 
