@@ -12,3 +12,9 @@ def play(request):
 
 def profile(request):
     return render(request,'profile.html')
+
+def singleplayer(request):
+    return render(request, 'single_player.html')
+
+def multiplayer(request):
+    return render(request, 'multi_player.html')
