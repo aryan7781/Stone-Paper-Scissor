@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    background: url("./images/gameplay_back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.heading{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 4% 7%;
+}
+
+.tag{
+    background-color: gray;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+.cams{
+    padding: 4% 7%;
+}
+
+.score{
+    padding: 4% 7%;
+}
+
+.player-1-div{
+    display: flex;
+    justify-content: center;
+}
+
+.player-2-div{
+    display: flex;
+    justify-content: center;
+}
+
+.player-1-cam{
+    background-color: #fff;
+    height: 350px;
+    width: 100%;
+    border-radius: 40px;
+}
+
+.v-s{
+    border-radius: 40px;
+}
+
+.player-2-cam{
+    background-color: #fff;
+    height: 350px;
+    width: 100%;
+    border-radius: 40px;
+}
+
+.player-1-score{
+    background-color: #fff;
+    height: 100px;
+    width: 100%;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-2-score{
+    background-color: #fff;
+    height: 100px;
+    width: 100%;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-1-div{
+    display: flex;
+    justify-content: center;
+}
+
+.player-2-div{
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 991px){
+    .player-1-cam{
+        width: 60%;
+    }
+    .player-2-cam{
+        width: 60%;
+        margin-top: 40px;
+    }
+    .player-1-score{
+        width: 60%;
+    }
+    .player-2-score{
+        width: 60%;
+        margin-top: 40px;
+    }
+}
+
