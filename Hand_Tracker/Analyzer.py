@@ -17,7 +17,7 @@ while True:
     else:
         pred = (classifier.predict(lms))
         if pred < (1 - MIN_TRACK_CON):
-            to_print = "Papers"
+            to_print = "Paper"
         elif pred > MIN_TRACK_CON:
             to_print = "Stone"
 
