@@ -47,7 +47,8 @@ body{
     background-color: #fff;
     height: 350px;
     width: 100%;
-    border-radius: 40px;
+    /* border-radius: 40px; */
+    padding: 40px;
 }
 
 .v-s{
@@ -58,7 +59,7 @@ body{
     background-color: #fff;
     height: 350px;
     width: 100%;
-    border-radius: 40px;
+    /* border-radius: 40px; */
 }
 
 .player-1-score{
