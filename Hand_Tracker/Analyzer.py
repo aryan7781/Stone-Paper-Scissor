@@ -1,5 +1,6 @@
 import cv2
 import tensorflow as tf
+import numpy as np
 
 from HandTrackingModule import HandDetector
 
@@ -15,10 +16,12 @@ while True:
     if lms == "No Hand Tracked":
         print(lms)
     else:
-        pred = (classifier.predict(lms))
-        if pred < (1 - MIN_TRACK_CON):
+        pred = np.argmax((classifier.predict(lms)), axis = -1)
+        if pred == 0:
             to_print = "Paper"
-        elif pred > MIN_TRACK_CON:
+        elif pred == 1:
+            to_print = "Scissor"
+        elif pred == 2:
             to_print = "Stone"
 
     cv2.putText(
@@ -30,8 +33,6 @@ while True:
         (0, 0, 0),
         3
     )
-
-
 
     cv2.imshow("Analyze", img)
     cv2.waitKey(1)
