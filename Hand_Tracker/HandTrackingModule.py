@@ -78,7 +78,6 @@ class HandDetector():
         lms.to_csv(save_file_name)
 
     def get_landmarks(self, img):
-
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         results = self.hands.process(imgRGB)
         if results.multi_hand_landmarks:
@@ -89,13 +88,31 @@ class HandDetector():
                     lm_dict[f"{id}_y"] = Lm.y
                     # print(lm_dict)
 
-                self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
+                #self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
                 lms = pd.Series(lm_dict)
                 lms = lms.to_numpy()
                 lms = np.expand_dims(lms, axis = 0)
             return lms
         else:
             return "No Hand Tracked"
+
+    def get_results(self, img, classifier):
+        lms = self.get_landmarks(img)
+        result = "None"
+        if lms == "No Hand Tracked":
+            print(lms)
+        else:
+            pred = np.argmax((classifier.predict(lms)), axis=-1)
+            if pred == 0:
+                result = "Paper"
+            elif pred == 1:
+                result = "Scissor"
+            elif pred == 2:
+                result = "Stone"
+
+        return result
+
+
 
 
 
