@@ -1,12 +1,13 @@
 import cv2
 import sys
 import tensorflow as tf
-base_dir = '../../../'
-sys.path.insert(0, ('E:\Coding\Projects\Stone Paper Scissor\Stone-Paper-Scissor\Hand_Tracker'))
-#
+BASE_DIR = "../"
+sys.path.insert(0, (BASE_DIR + 'Hand_Tracker'))
+
 from HandTrackingModule import HandDetector
 hand_detector = HandDetector()
-classifier = tf.keras.models.load_model(('E:\Coding\Projects\Stone Paper Scissor\Stone-Paper-Scissor\Hand_Tracker\Model\Classifier.h5'))
+classifier = tf.keras.models.load_model((BASE_DIR + "Hand_Tracker/Model/Classifier.h5"))
+
 
 class VideoCamera(object):
     def __init__(self):
