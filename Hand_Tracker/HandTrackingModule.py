@@ -99,9 +99,8 @@ class HandDetector():
     def get_results(self, img, classifier):
         lms = self.get_landmarks(img)
         result = "None"
-        if lms == "No Hand Tracked":
-            print(lms)
-        else:
+        if not (lms == "No Hand Tracked"):
+
             pred = np.argmax((classifier.predict(lms)), axis=-1)
             if pred == 0:
                 result = "Paper"
