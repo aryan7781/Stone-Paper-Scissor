@@ -1,4 +1,3 @@
-
 const img_set_arr = ['../static/images/stone_game_img.png', '../static/images/paper_game_img.png', '../static/images/scissor_game_img.png'];
 let i = 0;
 const img  = document.getElementById('change-img');
