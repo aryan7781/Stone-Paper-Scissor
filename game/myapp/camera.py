@@ -18,20 +18,12 @@ class VideoCamera(object):
 
     def get_frame(self):
         success,image=self.video.read()
-        # to_print = hand_detector.get_results(image, classifier)
-        # cv2.putText(
-        #     image,
-        #     f'{to_print}',
-        #     (20, 70),
-        #     cv2.FONT_HERSHEY_PLAIN,
-        #     3,
-        #     (0, 0, 0),
-        #     3
-        # )
-        image = cv2.flip(image, )
         ret,jpeg=cv2.imencode('.jpg',image)
         return jpeg.tobytes()
 
 
     def get_result(self):
-        pass
+        success, image = self.video.read()
+        predicted_data = hand_detector.get_result_as_dict(image, classifier)
+        
+        return predicted_data

@@ -6,7 +6,7 @@ from HandTrackingModule import HandDetector
 
 hand_detector = HandDetector()
 cap = cv2.VideoCapture(0)
-classifier = tf.keras.models.load_model('./Model/Classifier.h5')
+classifier = tf.keras.models.load_model('E:\Coding\Projects\Stone Paper Scissor\Stone-Paper-Scissor\Hand_Tracker\Model\Classifier.h5')
 MIN_TRACK_CON = 0.9
 
 while True:
@@ -23,8 +23,8 @@ while True:
     #         to_print = "Scissor"
     #     elif pred == 2:
     #         to_print = "Stone"
-    to_print = hand_detector.get_results(img, classifier)
-
+    to_print = hand_detector.get_result_as_dict(img, classifier)
+    # print(to_print)
     cv2.putText(
         img,
         f'{to_print}',

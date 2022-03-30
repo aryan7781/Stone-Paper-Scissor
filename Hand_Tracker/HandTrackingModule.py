@@ -111,6 +111,26 @@ class HandDetector():
 
         return result
 
+    def get_result_as_dict(self, img, classifier):
+        lms = self.get_landmarks(img)
+        predicted_as_dict = {"Paper": 0,"Scissor": 0, "Stone": 0}
+        prediction_arr = None
+        if not (lms == "No Hand Tracked"):
+            prediction_arr = classifier.predict(lms)
+            pred = np.argmax((prediction_arr), axis=-1)
+            if(prediction_arr[0][pred] > 0.9):
+                if(pred == 2):
+                    predicted_as_dict['Stone'] = 1
+                elif(pred == 1):
+                    predicted_as_dict['Scissor'] = 1
+                elif(pred == 0):
+                    predicted_as_dict['Paper'] = 1
+
+        # print(predicted_as_dict)
+        # print(prediction_arr)
+
+        return predicted_as_dict
+
 
 
 
