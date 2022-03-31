@@ -5,13 +5,41 @@ body{
 }
 
 .front-bg{
-    height: 100vh;
-    background: url("./images/stone_paper_scissors_logo.png");
+    min-height: 100vh;
+    background: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* background: url("./images/stone_paper_scissors_logo.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
     /* opacity: 0.4; */
 }
+
+.intro-of-game{
+    width: 60%;
+    /* height: 90%; */
+    padding: 10% 4%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.name{
+    border-right: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+}
+
 /* 
 .nav-opts{
     display: flex;
@@ -33,3 +61,15 @@ body{
 .sps-logo{
     height: 50px;
 } */
+
+@media screen and (max-width: 991px)
+{
+    .name{
+        border: none;
+    }
+
+    .about{
+        display: none;
+    }
+}
+

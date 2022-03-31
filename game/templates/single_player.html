@@ -17,8 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&family=Nunito:wght@700;800;900&family=Pushster&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="{% static 'singleplayer_style.css' %}">
     <!-- <script src="{% static 'js/single_player.js' %}"></script> -->
@@ -30,7 +29,7 @@
 
     <div class="heading">
         <div class="tag">
-            <h1>Let's Pilllay !! <span><i class="far fa-laugh-beam fas-3x"></i></span></h1>
+            <h1>Let's Play !! <span><i class="far fa-laugh-beam fas-3x"></i></span></h1>
         </div>
     </div>
 
@@ -38,12 +37,15 @@
 
         <div class="col-lg-5 player-1-div">
             <div class="player-1-cam">
-                <img src="{% url 'video_feed' %}" alt="player-1-cam" class="cam-design" width="100%" height="100%">
+                <button onclick="switchOnCamera()" id="on-cam-btn">Open Camera</button>
+                <img src="" id="cam-on" alt="player-1-cam" class="cam-design" width="100%" height="100%"
+                    style="display: none; position: relative">
+                <button onclick="closeCamera()" id="close-cam-btn" class="close-cam-icon"><i class="fa-solid fa-xmark" style="color: red;"></i></button>
             </div>
         </div>
         <div class="col-lg-2 v-s">
             <!-- HTML !-->
-            <button class="sps-btn" onclick="startGame()" role="button">S-P-S</button>
+            <button class="sps-btn" onclick="startGame()" role="button" style="font-size: 0.9rem;">S-P-S</button>
             <h1 id="timer" class="design-timer"></h1>
         </div>
         <div class="col-lg-5 player-2-div">
@@ -55,18 +57,23 @@
 
     </div>
 
+    <div class="row result">
+        <h1 id="write-abt-result">You Have Won <i class="fa-solid fa-face-grin"></i></h1>
+        <!-- <h1>Computer Have Won <i class="fa-solid fa-face-sad-tear"></i></h1> -->
+    </div>
+
     <div class="row score">
 
         <div class="col-lg-5 player-1-div">
             <div class="player-1-score">
-                <h1>Player_1 Score</h1>
+                <h1 id="display-player-1-score">0</h1>
             </div>
         </div>
         <div class="col-lg-2 v-s"></div>
         <div class="col-lg-5 player-2-div">
             <div class="player-2-score">
-                <h1>Player_2 Score</h1>
-                <h1>{{js_data}}</h1>
+                <h1 id="display-player-2-score">0</h1>
+                <!-- <h1>{{js_data}}</h1> -->
             </div>
         </div>
 
@@ -88,29 +95,55 @@
 
     <script type="text/javascript">
 
-    //    let user_input = JSON.parse("{{ js_data }}");
-    //    console.log(user_input);
+
+
+        //    let user_input = JSON.parse("{{ js_data }}");
+        //    console.log(user_input);
 
         const img_set_arr = ['../static/images/stone_game_img.png', '../static/images/paper_game_img.png', '../static/images/scissor_game_img.png'];
         let i = 0;
         const img = document.getElementById('change-img');
-        let x;
-        let ans;
-        let count;
-        let t;
+        const camera = document.getElementById('cam-on');
+        const camera_btn = document.getElementById('on-cam-btn');
+        const close_cam_btn = document.getElementById('close-cam-btn');
+        const disp_p_1_score = document.getElementById('display-player-1-score');
+        const disp_p_2_score = document.getElementById('display-player-2-score');
+        let x, ans, count, t, p_1_score, p_2_score;
+        p_1_score = 0;
+        p_2_score = 0;
 
-        function startGame() {
-            count = 3;
-            document.getElementById('timer').innerHTML = count;
-            img.src = '../static/images/stone_game_img.png';
-            x = setInterval(changeImage, 100);
-            ans = Math.floor(Math.random() * 3);
-            setTimeout(gameResult, 3000);
-            t = setInterval(reduceTime, 1000);
+        function switchOnCamera() {
+            camera.style.display = 'block';
+            camera.src = "{% url 'video_feed' %}";
+            camera_btn.style.display = 'none';
+            close_cam_btn.style.display = 'block';
         }
 
-        function reduceTime()
+        function closeCamera()
         {
+            camera.style.display = 'none';
+            camera.src = "";
+            camera_btn.style.display = 'block';
+            close_cam_btn.style.display = 'none';
+        }
+
+        function startGame() {
+            if (camera.src === '' || camera.style.display === 'none') {
+                alert('Please Switch on the Camera by Clicking on "Open Camera" button');
+                return;
+            }
+            else {
+                count = 3;
+                document.getElementById('timer').innerHTML = count;
+                img.src = '../static/images/stone_game_img.png';
+                x = setInterval(changeImage, 100);
+                ans = Math.floor(Math.random() * 3);
+                setTimeout(gameResult, 3000);
+                t = setInterval(reduceTime, 1000);
+            }
+        }
+
+        function reduceTime() {
             count = count - 1;
             document.getElementById('timer').innerHTML = count;
         }
@@ -126,6 +159,8 @@
             clearInterval(x);
             clearInterval(t);
             document.getElementById('timer').innerHTML = "";
+            disp_p_1_score.innerHTML = p_1_score;
+            disp_p_2_score.innerHTML = p_2_score;
         }
     </script>
 </body>
