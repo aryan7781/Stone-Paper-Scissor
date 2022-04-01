@@ -6,10 +6,11 @@
 body{
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
-    background: url("./images/gameplay_back.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .heading{
@@ -20,17 +21,19 @@ body{
 }
 
 .tag{
-    background-color: gray;
-    padding: 20px;
-    border-radius: 40px;
+    background: #000000;
+    padding: 20px 40px;
 }
 
 .cams{
-    padding: 2% 7%;
+    padding: 2% 5%;
+    width: 90%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .score{
-    padding: 2% 7%;
+    padding: 4% 3%;
+    width: 90%;
 }
 
 .player-1-div{
@@ -44,17 +47,26 @@ body{
 }
 
 .player-1-cam{
+    position: relative;
     background-color: #fff;
     height: 350px;
     width: 100%;
-    border-radius: 20px;
-    border: 3px solid yellow;
+    /* border-radius: 20px; */
+    border: 3px solid black;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* border-radius: 40px; */
     /* padding: 40px; */
 }
 
-.cam-design{
-    border-radius: 20px;
+#on-cam-btn{
+    border: none;
+    outline: none;
+    padding: 20px 40px;
+    background: black;
+    color: #fff;
 }
 
 .v-s{
@@ -116,16 +128,43 @@ body{
     background-color: #fff;
     height: 350px;
     width: 100%;
-    border-radius: 20px;
-    border: 3px solid lightblue;
+    /* border-radius: 20px; */
+    border: 3px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     /* border-radius: 40px; */
 }
 
+.close-cam-icon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    outline: none;
+    background: #fff;
+    border-radius: 50%;
+    padding: 0px 7px;
+    display: none;
+}
+
+.result{
+    width: 60%;
+    padding: 30px 20px;
+    margin-top: 20px;
+}
+
+.result h1{
+    text-align: center;
+}
+
+#write-abt-result{
+    height: 50px;
+}
+
 .design-timer{
-    color: yellow;
+    color: #fff;
     margin-top: 30px;
     font-size: 4rem;
     height: 77px;
@@ -135,23 +174,24 @@ body{
     background-color: #fff;
     height: 100px;
     width: 100%;
-    border-radius: 40px;
+    /* border-radius: 40px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid yellow;
+    border: 3px solid black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .player-2-score{
     background-color: #fff;
     height: 100px;
     width: 100%;
-    border-radius: 40px;
+    /* border-radius: 40px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid lightblue;
-
+    border: 3px solid black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .player-1-div{
@@ -171,10 +211,10 @@ body{
 
 @media screen and (max-width: 991px){
     .player-1-cam{
-        width: 60%;
+        width: 90%;
     }
     .player-2-cam{
-        width: 60%;
+        width: 90%;
         margin-top: 40px;
     }
     .player-1-score{
