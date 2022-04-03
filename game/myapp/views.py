@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import StreamingHttpResponse
+from django.http import JsonResponse, StreamingHttpResponse
 from myapp.camera import VideoCamera
 import json
 # Create your views here.
@@ -17,8 +17,8 @@ def play(request):
 def profile(request):
     return render(request,'profile.html')
 
-# def singleplayer(request):
-#     return render(request, 'single_player.html')
+def singleplayer(request):
+    return render(request, 'single_player.html')
 
 def multiplayer(request):
     return render(request, 'multi_player.html')
@@ -36,7 +36,8 @@ def get_result(request):
     while True:
         predicted_dict = vid_cam.get_result()
         js_data = json.dumps(predicted_dict)
-        yield render(request, 'single_player.html', {'js_data': js_data})
+        # return render(request, 'single_player.html', {'js_data': js_data})
+        return JsonResponse({'js_data':js_data})
 
 def video_feed(request):
     return (StreamingHttpResponse(gen(vid_cam),content_type='multipart/x-mixed-replace; boundary=frame'))
