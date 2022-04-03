@@ -32,7 +32,7 @@ body{
 }
 
 .score{
-    padding: 4% 3%;
+    padding: 2% 3%;
     width: 90%;
 }
 
@@ -151,8 +151,8 @@ body{
 
 .result{
     width: 60%;
-    padding: 30px 20px;
-    margin-top: 20px;
+    padding: 20px 10px;
+    margin-top: 10px;
 }
 
 .result h1{
@@ -160,7 +160,7 @@ body{
 }
 
 #write-abt-result{
-    height: 50px;
+    height: 30px;
 }
 
 .design-timer{

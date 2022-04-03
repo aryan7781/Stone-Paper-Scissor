@@ -36,6 +36,7 @@ def get_result(request):
     while True:
         predicted_dict = vid_cam.get_result()
         js_data = json.dumps(predicted_dict)
+        # print(js_data)
         # return render(request, 'single_player.html', {'js_data': js_data})
         return JsonResponse({'js_data':js_data})
 
