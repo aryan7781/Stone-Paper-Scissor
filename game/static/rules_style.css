@@ -5,24 +5,20 @@ body{
 }
 
 #rules{
-    background: url("./images/sps_theme.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+    background: yellow;
+    min-height: 100vh;
     width: 100%;
     /* padding: 20px; */
 }
 
-.rules-heading{
-    font-family: 'Lobster Two', cursive;
-    padding: 5px 25px;
-    background-color: #fff;
-    border: 2px solid rgb(182, 169, 169);
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    box-shadow: 3px 3px rgb(243, 130, 130);
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading h1{
+    text-align: center;
 }
 
 .rule-num{

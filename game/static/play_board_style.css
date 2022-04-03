@@ -36,37 +36,45 @@ body{
 }
 
 .center{
-    height: 70%;
-    width: 100%;
-    padding-top: 50px;
-}
-
-
-.btn{
-    height: 100px;
-    width: 30%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-radius: 40px;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.s_p_btn{
-    height: 35%;
+    height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.s_p_btn{
+    width: 300px;
+    padding: 20px 40px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s_p_btn a{
+    padding: 20px 30px;
+    background: black;
+    text-decoration: none;
+    color: white;
 }
 
 .m_p_btn{
-    height: 35%;
-    width: 100%;
+    width: 300px;
+    padding: 20px 40px;
+    margin-top: 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+}
+
+.m_p_btn a{
+    padding: 20px 30px;
+    background: white;
+    text-decoration: none;
+    color: black;
 }
 
 .copyright{
