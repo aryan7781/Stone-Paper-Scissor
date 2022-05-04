@@ -26,8 +26,8 @@ class HandDetector():
         self.mpDraw = mp.solutions.drawing_utils
 
     def findHands(self, img):
-        imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        results = self.hands.process(imgRGB)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        results = self.hands.process(img)
 
         if results.multi_hand_landmarks:
             for handLms in results.multi_hand_landmarks:
@@ -37,6 +37,8 @@ class HandDetector():
                     print(id, cx, cy)
 
                 self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+        return img
             # return results
 
     def collect_landmarks(self, category_of_sample = None, save_file_name:str = "Landmarks.csv", num_samples:int = 1000):
