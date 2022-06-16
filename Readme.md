@@ -3,12 +3,12 @@
 
 <!-- Using mediapipe, we collected a large amount of data in the form of hand landmarks. To predict the user's movement, a Deep Neural Network model was developed using the landmark data.<br> -->
 
-Let’s begin with recalling the classic game of ***“Stone Paper Scissors”***. usually played between two people, in which each player simultaneously forms one of three patterns amongst the stone, paper, or scissors with the hands. This project is a web application, in which users can play the game with the computer using the webcam. So, there is a need to build a classifier that takes images of hands as inputs and gives the user’s expected to move as output. The rules for the game are are given below
+Let’s begin with recalling the classic game of ***“Stone Paper Scissors”***. usually played between two people, in which each player simultaneously forms one of three patterns amongst the stone, paper, or scissors with the hands. This project is a web application, in which users can play the game with the computer using the webcam. So, there is a need to build a classifier that takes images of hands as inputs and gives the user’s expected to move as output.
 .<br>
 
 The fundamental rules of Rock, Paper, Scissors apply:<br>
   -> Scissors are defeated by Rock.<br>
-  -> Scissors thud paper.<br>
+  -> Scissors cut paper.<br>
   -> Paper is defeated by Scissors.<br>
 
 ## Web App Sample Image
