@@ -32,16 +32,12 @@ For the project, there is a need to build a classifier that takes images of hand
 	
 	
 **Chosen Model-**<br>
-The model that was chosen to deploy in our project-
+The pipeline that was chosen for classification in our project-<br>
+Pipeline(steps=[<br>
+&emsp;&emsp;&emsp;('transformer', Update_and_drop()),<br> 
+&emsp;&emsp;&emsp;('scaler', StandardScaler()),<br>
+&emsp;&emsp;&emsp;('clf', XGBClassifier(<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;learning_rate=0.5,<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;max_depth=5,<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;n_estimators=250))])<br>
 
-Extreme Gradient Boost Classifier
-
-XGBClassifier(
-
-n_estimators = 750,
-
-learning_rate = 0.25,
-
-max_depth = 16
-
-)
