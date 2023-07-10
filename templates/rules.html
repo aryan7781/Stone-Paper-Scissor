@@ -1,0 +1,100 @@
+{% extends 'templates/header.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&family=Nunito:wght@700;800;900&family=Pushster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    
+    {% block css_block %}
+    <link rel="stylesheet" href="{% static 'rules_style.css' %}">
+    {% endblock %}
+    {% block rules_active %} active {% endblock %}
+    <title>Stone Paper Scissor - Rules</title>
+  </head>
+  <body>
+
+      {% block body_block %}
+     
+    <div id="carouselExampleCaptions" class="carousel slide heading" data-bs-ride="carousel" data-bs-interval="false" style="width: 100%;">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+        
+          <div class="card mx-auto box-shadow" style="width: 30rem; height: 25rem;">
+            <div class="card-header">
+              RULE NO. 1
+            </div>
+            <div class="card-body mx-3">
+              <h5 class="card-title mb-3">CLICK ON <span class="purple-text"><i>OPEN CAMERA</i></span>  BUTTON</h5>
+              <p class="card-text mb-3">On clicking the "Open Camera" button , your camera will be accessed and you will be able to see your video on screen.</p>
+              <a href="#" class="btn btn-primary disabled">Open camera</a>
+            </div>
+          </div>
+          <div class="carousel-caption d-none d-md-block black-text">
+            <h5>Created By :</h5>
+            <p>Aryan Naman Swagat </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          
+          <div class="card mx-auto box-shadow" style="width: 30rem; height: 25rem;">
+            <div class="card-header">
+              RULE NO. 2
+            </div>
+            <div class="card-body mx-3">
+              <h5 class="card-title mb-3">CLICK ON <span class="purple-text"><i>S-P-S</i></span> BUTTON TO PLAY</h5>
+              <p class="card-text mb-3">On clicking "S-P-S" button , a timer of 3 seconds start, you have to make your hand gesture among Stone, Paper, Scissors in camera.</p>
+              <a href="#" class="btn btn-success disabled">S-P-S</a>
+            </div>
+          </div>
+          <div class="carousel-caption d-none d-md-block black-text">
+            <h5>Created By :</h5>
+            <p>Aryan Naman Swagat </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+         
+          <div class="card mx-auto box-shadow" style="width: 30rem; height: 25rem;">
+            <div class="card-header">
+              RULE NO. 3
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">MAKE PROPER <span class="purple-text"><i>HAND</i></span> GESTURE</h5>
+              <p class="card-text black-text">Make proper hand gesture , after 3 seconds your gesture will be compared with computer's randomly generated gesture to declare the winner.</p>
+              <a href="#" class="btn btn-warning disabled">Let's Play</a>
+            </div>
+          </div>
+          <div class="carousel-caption d-none d-md-block black-text">
+            <h5>Created By :</h5>
+            <p>Aryan Naman Swagat </p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev black-text" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next black-text" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,46 @@
+body{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+.front-bg{
+    min-height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.intro-of-game{
+    width: 60%;
+    padding: 10% 4%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.name{
+    border-right: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+}
+
+@media screen and (max-width: 991px)
+{
+    .name{
+        border: none;
+    }
+
+    .about{
+        display: none;
+    }
+}
+

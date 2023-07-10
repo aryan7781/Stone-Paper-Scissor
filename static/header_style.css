@@ -1,0 +1,25 @@
+#navigation-bar{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.nav-opts{
+    display: flex;
+    justify-content: end;
+}
+
+.bg-light-pink{
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+@media screen and (max-width: 991px)
+{
+    .nav-opts{
+        justify-content: start;
+    }
+}
+
+.sps-logo{
+    height: 50px;
+}
