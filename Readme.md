@@ -12,7 +12,7 @@ The fundamental rules of Rock, Paper, Scissors apply:<br>
   -> Paper is defeated by Scissors.<br>
 
 ## Web App Sample Image
-![Sample](https://github.com/aryan7781/Stone-Paper-Scissor/blob/master/New%20folder/3.png?raw=true)
+![Sample](https://github.com/aryan7781/Stone-Paper-Scissor/blob/master/images/Sample_game_img.png)
 
 ## [Development Of Machine Learning Model](https://github.com/aryan7781/Stone-Paper-Scissor/blob/master/Hand_Tracker/EDA%20and%20Machine%20Learning%20Model%20Selection/Landmarks_Analysis_for_sps.ipynb)<sub>Link to IPython Notebook</sub>
 For the project, there is a need to build a classifier that takes images of hands as inputs and gives the user’s expected to move as output. Mediapipe is a library by Google that provides solutions for the recognition of key hand points. We use the library to gather Hand Landmarks for the three patterns that have meaning to the project i.e., Stone, Paper, and Scissors. The Hand Landmark Model in Mediapipe allows us to collect precise key points for 21 hand-knuckle coordinates on x and y axes inside the detected hand region.
@@ -32,16 +32,12 @@ For the project, there is a need to build a classifier that takes images of hand
 	
 	
 **Chosen Model-**<br>
-The model that was chosen to deploy in our project-
+The pipeline that was chosen for classification in our project-<br>
+Pipeline(steps=[<br>
+&emsp;&emsp;&emsp;('transformer', Update_and_drop()),<br> 
+&emsp;&emsp;&emsp;('scaler', StandardScaler()),<br>
+&emsp;&emsp;&emsp;('clf', XGBClassifier(<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;learning_rate=0.5,<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;max_depth=5,<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;n_estimators=250))])<br>
 
-Extreme Gradient Boost Classifier
-
-XGBClassifier(
-
-n_estimators = 750,
-
-learning_rate = 0.25,
-
-max_depth = 16
-
-)
