@@ -1,110 +1,157 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    background: url("./images/gameplay_back.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  background: hsla(267, 10%, 17%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(267, 10%, 17%, 1) 12%,
+    hsla(191, 84%, 95%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(267, 10%, 17%, 1) 12%,
+    hsla(191, 84%, 95%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(267, 10%, 17%, 1) 12%,
+    hsla(191, 84%, 95%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2B2730", endColorstr="#E8F9FD", GradientType=1 );
 }
 
-.heading{
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    padding: 4% 7%;
+.card {
+  background: hsla(229, 100%, 98%, 1);
+
+  background: linear-gradient(
+    225deg,
+    hsla(229, 100%, 98%, 1) 12%,
+    hsla(0, 0%, 96%, 1) 99%
+  );
+
+  background: -moz-linear-gradient(
+    225deg,
+    hsla(229, 100%, 98%, 1) 12%,
+    hsla(0, 0%, 96%, 1) 99%
+  );
+
+  background: -webkit-linear-gradient(
+    225deg,
+    hsla(229, 100%, 98%, 1) 12%,
+    hsla(0, 0%, 96%, 1) 99%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F4F6FF", endColorstr="#F4F4F4", GradientType=1 );
 }
 
-.tag{
-    background-color: gray;
-    padding: 20px;
-    border-radius: 40px;
+.heading {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 4% 7%;
 }
 
-.cams{
-    padding: 4% 7%;
+.tag {
+  background-color: gray;
+  padding: 20px;
+  border-radius: 40px;
 }
 
-.score{
-    padding: 4% 7%;
+.cams {
+  padding: 4% 7%;
 }
 
-.player-1-div{
-    display: flex;
-    justify-content: center;
+.score {
+  padding: 4% 7%;
 }
 
-.player-2-div{
-    display: flex;
-    justify-content: center;
+.player-1-div {
+  display: flex;
+  justify-content: center;
 }
 
-.player-1-cam{
-    background-color: #fff;
-    height: 350px;
-    width: 100%;
-    border-radius: 40px;
+.player-2-div {
+  display: flex;
+  justify-content: center;
 }
 
-.v-s{
-    border-radius: 40px;
+.player-1-cam {
+  background-color: #fff;
+  height: 350px;
+  width: 100%;
+  border-radius: 40px;
 }
 
-.player-2-cam{
-    background-color: #fff;
-    height: 350px;
-    width: 100%;
-    border-radius: 40px;
+.v-s {
+  border-radius: 40px;
 }
 
-.player-1-score{
-    background-color: #fff;
-    height: 100px;
-    width: 100%;
-    border-radius: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.player-2-cam {
+  background-color: #fff;
+  height: 350px;
+  width: 100%;
+  border-radius: 40px;
 }
 
-.player-2-score{
-    background-color: #fff;
-    height: 100px;
-    width: 100%;
-    border-radius: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.player-1-score {
+  background-color: #fff;
+  height: 100px;
+  width: 100%;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.player-1-div{
-    display: flex;
-    justify-content: center;
+.player-2-score {
+  background-color: #fff;
+  height: 100px;
+  width: 100%;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.player-2-div{
-    display: flex;
-    justify-content: center;
+.player-1-div {
+  display: flex;
+  justify-content: center;
 }
 
-@media screen and (max-width: 991px){
-    .player-1-cam{
-        width: 60%;
-    }
-    .player-2-cam{
-        width: 60%;
-        margin-top: 40px;
-    }
-    .player-1-score{
-        width: 60%;
-    }
-    .player-2-score{
-        width: 60%;
-        margin-top: 40px;
-    }
+.player-2-div {
+  display: flex;
+  justify-content: center;
 }
 
+@media screen and (max-width: 991px) {
+  .player-1-cam {
+    width: 60%;
+  }
+  .player-2-cam {
+    width: 60%;
+    margin-top: 40px;
+  }
+  .player-1-score {
+    width: 60%;
+  }
+  .player-2-score {
+    width: 60%;
+    margin-top: 40px;
+  }
+}

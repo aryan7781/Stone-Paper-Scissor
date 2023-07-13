@@ -13,18 +13,11 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    {% block css_block %}
+    <link rel="stylesheet" href="{% static 'multiplayer_style.css' %}" />
+    {% endblock %}
   </head>
   <body>
-    <style>
-      .body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        min-height: 90vh;
-      }
-    </style>
     <div class="body">
       <div
         class="card mx-auto"

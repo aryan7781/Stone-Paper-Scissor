@@ -1,46 +1,85 @@
-body{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
 }
 
-.front-bg{
-    min-height: 100vh;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+.front-bg {
+  min-height: 100vh;
+  background: hsla(267, 10%, 17%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(267, 10%, 17%, 1) 12%,
+    hsla(191, 84%, 95%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(267, 10%, 17%, 1) 12%,
+    hsla(191, 84%, 95%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(267, 10%, 17%, 1) 12%,
+    hsla(191, 84%, 95%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2B2730", endColorstr="#E8F9FD", GradientType=1 );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
-.intro-of-game{
-    width: 60%;
-    padding: 10% 4%;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.intro-of-game {
+  width: 60%;
+  padding: 10% 4%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background: hsla(229, 100%, 98%, 1);
+
+  background: linear-gradient(
+    225deg,
+    hsla(229, 100%, 98%, 1) 12%,
+    hsla(0, 0%, 96%, 1) 99%
+  );
+
+  background: -moz-linear-gradient(
+    225deg,
+    hsla(229, 100%, 98%, 1) 12%,
+    hsla(0, 0%, 96%, 1) 99%
+  );
+
+  background: -webkit-linear-gradient(
+    225deg,
+    hsla(229, 100%, 98%, 1) 12%,
+    hsla(0, 0%, 96%, 1) 99%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F4F6FF", endColorstr="#F4F4F4", GradientType=1 );
 }
 
-.name{
-    border-right: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.name {
+  border-right: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.about{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 30px;
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
 }
 
-@media screen and (max-width: 991px)
-{
-    .name{
-        border: none;
-    }
+@media screen and (max-width: 991px) {
+  .name {
+    border: none;
+  }
 
-    .about{
-        display: none;
-    }
+  .about {
+    display: none;
+  }
 }
-

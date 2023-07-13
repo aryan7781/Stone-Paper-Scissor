@@ -1,25 +1,43 @@
-#navigation-bar{
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+#navigation-bar {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.nav-opts{
-    display: flex;
-    justify-content: end;
+.nav-opts {
+  display: flex;
+  justify-content: end;
 }
 
-.bg-light-pink{
-    background-color: #fff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.bg-light-pink {
+  background: hsla(229, 100%, 98%, 1);
+
+  background: linear-gradient(
+    225deg,
+    hsla(229, 100%, 98%, 1) 12%,
+    hsla(0, 0%, 96%, 1) 99%
+  );
+
+  background: -moz-linear-gradient(
+    225deg,
+    hsla(229, 100%, 98%, 1) 12%,
+    hsla(0, 0%, 96%, 1) 99%
+  );
+
+  background: -webkit-linear-gradient(
+    225deg,
+    hsla(229, 100%, 98%, 1) 12%,
+    hsla(0, 0%, 96%, 1) 99%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F4F6FF", endColorstr="#F4F4F4", GradientType=1 );
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-
-@media screen and (max-width: 991px)
-{
-    .nav-opts{
-        justify-content: start;
-    }
+@media screen and (max-width: 991px) {
+  .nav-opts {
+    justify-content: start;
+  }
 }
 
-.sps-logo{
-    height: 50px;
+.sps-logo {
+  height: 50px;
 }
