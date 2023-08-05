@@ -8,13 +8,13 @@ Let’s begin with recalling the classic game of ***“Stone Paper Scissors”**
 
 The fundamental rules of Rock, Paper, Scissors apply:<br>
   -> Scissors are defeated by Rock.<br>
-  -> Scissors cut paper.<br>
-  -> Paper is defeated by Scissors.<br>
+  -> Paper gets cut by scissors.<br>
+  -> Rock gets covered by paper.<br>
 
 ## Web App Sample Image
-![Sample](https://github.com/aryan7781/Stone-Paper-Scissor/blob/master/images/Sample_game_img.png)
+![Sample](https://imgur.com/Xa2Gf1Z.png)
 
-## [Development Of Machine Learning Model](https://github.com/aryan7781/Stone-Paper-Scissor/blob/master/Hand_Tracker/EDA%20and%20Machine%20Learning%20Model%20Selection/Landmarks_Analysis_for_sps.ipynb)<sub>Link to IPython Notebook</sub>
+## [Development Of Machine Learning Model](https://github.com/aryan7781/Stone-Paper-Scissor/blob/master/Hand_Tracker/EDA%20and%20Machine%20Learning%20Model%20Selection/EDA%20and%20Model%20Selection.ipynb)<sub>Link to IPython Notebook</sub>
 For the project, there is a need to build a classifier that takes images of hands as inputs and gives the user’s expected to move as output. Mediapipe is a library by Google that provides solutions for the recognition of key hand points. We use the library to gather Hand Landmarks for the three patterns that have meaning to the project i.e., Stone, Paper, and Scissors. The Hand Landmark Model in Mediapipe allows us to collect precise key points for 21 hand-knuckle coordinates on x and y axes inside the detected hand region.
 
 
